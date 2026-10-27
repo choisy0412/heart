@@ -1,0 +1,75 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .heart{
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            font-size: 80px;
+
+            animation: pop 2s forwards;
+        }
+
+        @keyframes pop{
+
+            0%{
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+
+            50%{
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+
+            100%{
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="f()">push</button>
+
+<script>
+
+    function f(){
+
+        let heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.className = "heart";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 2000);
+    }
+
+</script>
+
+</body>
+</html>
+```
